@@ -1,0 +1,13 @@
+<ng-container *ngIf="product">
+<div class="container" *ngFor="let prod of product">
+    <div class="product-details">
+   <h4>{{prod.producer}}</h4>
+   <h2>{{prod.name}}</h2>
+    <p>{{prod.description}}</p>
+</div>
+    <div>
+    <app-price [product]="prod"></app-price>
+    </div>
+</div>
+
+</ng-container>
