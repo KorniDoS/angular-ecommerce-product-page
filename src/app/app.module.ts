@@ -3,14 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { ProductComponent } from './components/product/product.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PriceComponent } from './components/price/price.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductComponent,
+    CarouselComponent,
+    HeaderComponent,
+    MenuComponent,
+    ShoppingCartComponent,
+    PriceComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

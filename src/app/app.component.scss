@@ -1,0 +1,76 @@
+/*# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Orange: hsl(26, 100%, 55%)
+- Pale orange: hsl(25, 100%, 94%)
+
+### Neutral
+
+- Very vark blue: hsl(220, 13%, 13%)
+- Dark grayish blue: hsl(219, 9%, 45%)
+- Grayish blue: hsl(220, 14%, 75%)
+- Light grayish blue: hsl(223, 64%, 98%)
+- White: hsl(0, 0%, 100%)
+- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 16px
+
+### Font
+
+- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+- Weights: 400, 700
+
+*/
+
+
+$container-sm: 540px;
+$container-md: 740px;
+$container-lg: 960px;
+$container-xlg: 1140px;
+$container-xxlg: 1300px;
+
+.attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+
+    .container {
+        max-width: 80%;
+        padding: 2rem 2rem 1.2rem 1rem;
+        margin-block-start: 2.3rem;
+        margin-inline: auto;
+        background-color: white;
+      
+        @media screen and (min-width: 576px) {
+          width: $container-sm !important;
+        }
+      
+        @media screen and (min-width: 768px) {
+          width: $container-md !important;
+        }
+      
+        @media screen and (min-width: 992px) {
+          width: $container-lg !important;
+        }
+      
+        @media screen and (min-width: 1200px) {
+          width: $container-xlg !important;
+         }
+      
+        @media screen and (min-width: 1400px) {
+          width: $container-xxlg !important;
+         }
+      }
