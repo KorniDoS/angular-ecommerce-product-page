@@ -1,0 +1,40 @@
+@use "src/colours";
+
+.menu-container {
+  img {
+    cursor: pointer;
+  }
+}
+
+.backdrop {
+  position: absolute;
+  z-index: 4;
+  background-color: rgba(64, 64, 64, 0.7);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.activated-menu {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 99;
+  padding-left: 20px;
+
+  img {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    width: 16px;
+  }
+
+  .menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}

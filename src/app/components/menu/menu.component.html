@@ -1,0 +1,26 @@
+<div class="menu-container">
+  <img
+    [src]="'../assets/images/icon-menu.svg'"
+    alt="open menu"
+    (click)="openMenu()"
+  />
+
+  <div *ngIf="toggledMenu" class="backdrop">
+    <div class="activated-menu">
+      <div class="menu-wrapper">
+        <nav>
+          <img
+            [src]="'../assets/images/icon-close.svg'"
+            alt="close"
+            (click)="closeMenu()"
+          />
+          <ul>
+            <li *ngFor="let item of menuItems">
+              <a href="">{{ item }}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
