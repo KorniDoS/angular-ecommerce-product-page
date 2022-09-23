@@ -1,13 +1,15 @@
 <ng-container *ngIf="product">
-<div class="container" *ngFor="let prod of product">
-    <div class="product-details">
-   <h4>{{prod.producer}}</h4>
-   <h2>{{prod.name}}</h2>
-    <p>{{prod.description}}</p>
-</div>
-    <div>
-    <app-price [product]="prod"></app-price>
+  <ng-container *ngFor="let prod of product">
+    <app-carousel [productImages]="prod.images"></app-carousel>
+    <div class="container">
+      <div class="product-details">
+        <h4 class="producer">{{ prod.producer }}</h4>
+        <h2>{{ prod.name }}</h2>
+        <p>{{ prod.description }}</p>
+      </div>
+      <div>
+        <app-price [product]="prod"></app-price>
+      </div>
     </div>
-</div>
-
+  </ng-container>
 </ng-container>
