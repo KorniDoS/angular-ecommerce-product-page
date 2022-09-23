@@ -1,1 +1,38 @@
-<p>shopping-cart works!</p>
+<div class="cart">
+  <img [src]="'../assets/images/icon-cart.svg'" alt="cart" />
+  <span class="cart-items-no">{{ cart.length }}</span>
+</div>
+
+<div *ngIf="toggledCart" class="checkout-container">
+  <h2>Cart</h2>
+
+  <hr />
+
+  <div class="cart-item-info" *ngIf="cart.length !== 0; else empty">
+    <div>
+      <img class="thumbnail"
+        [src]="cart[0].thumbnails[0]"
+        [alt]="cart[0].name"
+      />
+    </div>
+    <div>
+      <h3>{{ cart[0].name }}</h3>
+      <span>{{ cart[0].price | currency: "USD" }} x {{ cart.length }}</span>
+      <span class="price">
+        {{ cart[0].price * cart.length | currency: "USD" }}</span
+      >
+    </div>
+
+    <img
+      (click)="deleteProducts()"
+      [src]="'../assets/images/icon-delete.svg'"
+      alt="delete"
+    />
+
+   <button class="checkout">Checkout</button>
+  </div>
+
+  <ng-template #empty>
+    <p class="cart-item-info">Your cart is empty.</p>
+  </ng-template>
+</div>
