@@ -11,7 +11,8 @@ export class StorageService {
   constructor(private http: HttpClient) { }
 
    private products: Product[] = [];
-   cart = new BehaviorSubject<Product[]>([]);
+   cart = new BehaviorSubject<any>('');
+   noOfItems = new Subject<number>();
 
 
    loadedProduct = new Subject<boolean>();
