@@ -1,10 +1,19 @@
 .container-fluid {
   width: 100%;
-  background-color: transparent;
-  height: 3.125rem;
-  padding: 2rem;
-  background-color: red;
+// background-color: transparent;
+ // height: 3.125rem;
+ // padding: 2rem;
+  //background-color: red;
+ // margin-inline: auto;
+ //display: flex;
+ //align-items: center;
+ //justify-content: flex-start;
 
-  display: flex;
-  align-items: center;
+
+ .container{
+  margin-block-start: 0;
+  background-color: transparent;
+  padding: 1rem 1rem;
+ }
+
 }
