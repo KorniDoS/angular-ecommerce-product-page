@@ -5,4 +5,6 @@ export interface Product {
   price: number;
   fullPrice: boolean;
   oldPrice: number;
+  thumbnails: string[];
+  images: string[];
 }
