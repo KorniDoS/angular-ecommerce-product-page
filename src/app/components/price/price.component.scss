@@ -1,67 +1,73 @@
-@use 'src/colours';
+@use "src/colours";
 
-
-.price{
-    font-size: 1.3rem;
-    color: colours.$vdark-blue;
-    font-weight: 700;
+.price {
+  font-size: 1.3rem;
+  color: colours.$vdark-blue;
+  font-weight: 700;
 }
-.old-price{
-    text-decoration: line-through;
-    color: colours.$dark-grayish-blue;
-    font-weight: 400;
-}
-
-.reduced{
-    padding: .25rem .4rem;
-    color: colours.$primary-orange;
-    background-color: colours.$primary-pale-orange;
-    border-radius: 6px;
+.old-price {
+  text-decoration: line-through;
+  color: colours.$dark-grayish-blue;
+  font-weight: 400;
 }
 
-.product-amount{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-block: 1.5rem;
-    background-color: colours.$light-grayish-blue;
-    padding: .8rem 1rem;
-    border-radius: 8px;
-
-    font-weight: 700;
-
-    img:hover{
-        cursor: pointer;
-    }
+.reduced {
+  padding: 0.25rem 0.4rem;
+  color: colours.$primary-orange;
+  background-color: colours.$primary-pale-orange;
+  border-radius: 6px;
 }
 
-.add-to-cart{
+.product-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 1.5rem;
+  background-color: colours.$light-grayish-blue;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+
+  font-weight: 700;
+
+  .hover:hover {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(99%) saturate(294%)
+      hue-rotate(331deg) brightness(102%) contrast(101%);
+  }
+
+  img:hover {
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: .8rem 1rem;
-    background-color: colours.$primary-orange;
-    color: white;
-    border-radius: 8px;
-
-    box-shadow: 0 15px 10px colours.$primary-pale-orange;
-
-
-    img{
-        filter: brightness(100);
-        margin-right: .5rem;
-    }
-
+  }
 }
 
-.prices{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.add-to-cart {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    .reduced{
-        margin-left: .5rem;
-    }
+  padding: 0.8rem 1rem;
+  background-color: colours.$primary-orange;
+  color: white;
+  border-radius: 8px;
+
+  box-shadow: 0 15px 10px colours.$primary-pale-orange;
+
+  img {
+    filter: brightness(100);
+    margin-right: 0.5rem;
+  }
+
+  &:hover {
+    background-color: hsl(20, 100%, 70%);
+  }
+}
+
+.prices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .reduced {
+    margin-left: 0.5rem;
+  }
 }

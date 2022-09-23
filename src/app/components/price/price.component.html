@@ -2,26 +2,26 @@
   <div class="prices">
     <div class="">
       <span class="price">{{
-        product?.price | number: "1.2-2" | currency: "USD"
+        product.price | number: "1.2-2" | currency: "USD"
       }}</span>
-      <span class="reduced" *ngIf="!product?.fullPrice">50%</span>
+      <span class="reduced" *ngIf="!product.fullPrice">50%</span>
     </div>
 
     <div>
-      <span class="old-price">{{ product?.oldPrice | currency: "USD" }}</span>
+      <span class="old-price">{{ product.oldPrice | currency: "USD" }}</span>
     </div>
     
   </div>
 
   <div class="wrapper">
     <div class="product-amount">
-      <img [src]="'../assets/images/icon-minus.svg'" alt="minus" />
-      <span>0</span>
-      <img [src]="'../assets/images/icon-plus.svg'" alt="plus" />
+      <img class="hover" [src]="'../assets/images/icon-minus.svg'" alt="minus" (click)="onDecreaseProductQuantity()" />
+      <span>{{noOfProducts}}</span>
+      <img class="hover"[src]="'../assets/images/icon-plus.svg'" alt="plus" (click)="onIncreaseProductQuantity()"/>
     </div>
 
-    <div class="add-to-cart">
-      <img [src]="'../assets/images/icon-cart.svg'" alt="cart icon" />
+    <div class="add-to-cart" (click)="sendToCart()">
+      <img [src]="'../assets/images/icon-cart.svg'" alt="cart icon"/>
       <p>Add to cart</p>
     </div>
   </div>
