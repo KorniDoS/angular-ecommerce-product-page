@@ -1,22 +1,31 @@
 <div class="menu-container">
+    <div class="brand">
   <img
     [src]="'../assets/images/icon-menu.svg'"
     alt="open menu"
     (click)="openMenu()"
   />
+  <h1>sneakers</h1>
+</div>
+
+<div class="cart-avatar-wrapper">
+    <app-shopping-cart (click)="toggleCart()" [toggledCart]="toggledCart"></app-shopping-cart>
+    <img class="avatar" [src]="'../assets/images/image-avatar.png'" alt="avatar">
+</div>
+
 
   <div *ngIf="toggledMenu" class="backdrop">
     <div class="activated-menu">
       <div class="menu-wrapper">
         <nav>
-          <img
+          <img class="close-button"
             [src]="'../assets/images/icon-close.svg'"
             alt="close"
             (click)="closeMenu()"
           />
           <ul>
             <li *ngFor="let item of menuItems">
-              <a href="">{{ item }}</a>
+              <a href="#">{{ item }}</a>
             </li>
           </ul>
         </nav>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
   menuItems: string[] = [];
   toggledMenu: boolean = false;
+  toggledCart: boolean = false;
+
+
   constructor() {}
 
   ngOnInit(): void {
@@ -20,5 +23,9 @@ export class MenuComponent implements OnInit {
 
   closeMenu(){
     this.toggledMenu = false;
+  }
+
+  toggleCart(){
+  this.toggledCart = !this.toggledCart;
   }
 }
