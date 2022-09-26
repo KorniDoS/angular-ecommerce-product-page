@@ -20,9 +20,9 @@
       <img class="hover"[src]="'../assets/images/icon-plus.svg'" alt="plus" (click)="onIncreaseProductQuantity()"/>
     </div>
 
-    <div class="add-to-cart" (click)="sendToCart()">
+    <button class="add-to-cart" (click)="sendToCart()" [disabled]="noOfProducts === 0">
       <img [src]="'../assets/images/icon-cart.svg'" alt="cart icon"/>
       <p>Add to cart</p>
-    </div>
+    </button>
   </div>
 </div>
