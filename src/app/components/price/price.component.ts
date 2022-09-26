@@ -19,8 +19,8 @@ export class PriceComponent implements OnInit {
 
   onDecreaseProductQuantity(){
     if(this.noOfProducts === 0){
-      return;
-    } else this.noOfProducts--;
+     return;
+   } else this.noOfProducts--;
   }
 
   onIncreaseProductQuantity(){

@@ -29,6 +29,11 @@
 
   font-weight: 700;
 
+  @media screen and (min-width: 1000px) {
+    width: 40%;
+  }
+ 
+
   .hover:hover {
     filter: brightness(0) saturate(100%) invert(56%) sepia(99%) saturate(294%)
       hue-rotate(331deg) brightness(102%) contrast(101%);
@@ -40,6 +45,7 @@
 }
 
 .add-to-cart {
+  border: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -52,6 +58,15 @@
 
   box-shadow: 0 15px 10px colours.$primary-pale-orange;
 
+  @media screen and (min-width: 1000px) {
+    width: 58%;
+    
+  }
+
+  p {
+    user-select: none;
+  }
+
   img {
     filter: brightness(100);
     margin-right: 0.5rem;
@@ -62,12 +77,33 @@
   }
 }
 
+.add-to-cart:disabled{
+    background-color: hsl(20, 100%, 70%);
+}
+
 .prices {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  @media screen and (min-width: 1000px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+
   .reduced {
     margin-left: 0.5rem;
+  }
+}
+
+.wrapper{
+  @media screen and (min-width: 1000px){
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    
   }
 }
