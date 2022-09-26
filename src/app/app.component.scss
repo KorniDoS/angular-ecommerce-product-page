@@ -36,3 +36,11 @@ The designs were created to the following widths:
 
 */
 
+main{
+    min-height: calc(100% - 7.4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
