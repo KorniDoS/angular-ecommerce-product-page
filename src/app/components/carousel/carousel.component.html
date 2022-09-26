@@ -1,5 +1,12 @@
 <div class="main">
-<img class="product" [src]="productImages[0]" alt="sneakers" #main_img/>
+<img class="product" [src]="productImages[0]" alt="sneakers" #main_img (click)="onBigger($event)"/>
+<!--
+<div class="overlay" *ngIf="bigger">
+<img class="product" [src]="productImages[currentIndex]" alt="x">
+</div>
+
+-->
+
 
 <button class="btn btn-backward" (click)="onBackwards()">
 </button>

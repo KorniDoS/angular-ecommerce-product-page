@@ -19,6 +19,7 @@ export class CarouselComponent implements OnInit {
   @Input() productImages: string[] = [];
 
   currentIndex: number = 0;
+  bigger: boolean = false;
   ngOnInit(): void {}
 
   onBackwards() {
@@ -57,5 +58,11 @@ export class CarouselComponent implements OnInit {
         this.productImages[this.currentIndex].toString()
       );
     }
+  }
+
+
+  onBigger(event: Event){
+    this.bigger = !this.bigger;
+ 
   }
 }
