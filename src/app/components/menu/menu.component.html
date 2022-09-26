@@ -1,12 +1,27 @@
 <div class="menu-container">
     <div class="brand">
   <img
+  class="toggle-menu"
     [src]="'../assets/images/icon-menu.svg'"
     alt="open menu"
     (click)="openMenu()"
   />
+  <div>
   <h1>sneakers</h1>
 </div>
+  <div class="main-menu">
+    <nav>
+      <ul>
+        <li *ngFor="let item of menuItems">
+          <a href="#">{{ item }}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+</div>
+
+
 
 <div class="cart-avatar-wrapper">
     <app-shopping-cart (click)="toggleCart()" [toggledCart]="toggledCart"></app-shopping-cart>
@@ -32,4 +47,10 @@
       </div>
     </div>
   </div>
+
+
+
+ 
+
+
 </div>

@@ -7,6 +7,46 @@
     //height: 19px;
   }
 
+  .main-menu {
+
+    @media screen and (max-width: 999px) {
+      display: none;
+      
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+
+      li{
+        list-style-type: none;
+
+
+        @media screen and (min-width: 1000px){
+          gap: 1.875rem;          
+        }
+
+        a{
+                display: inline-block;
+            padding-block: 3rem;
+        }
+        a:link, a:visited{
+          text-decoration: none;
+          color: colours.$dark-grayish-blue;
+    
+        }
+
+        a:hover, a:focus{
+          border-bottom: 3px solid colours.$primary-orange;
+          color: colours.$vdark-blue;
+          padding-block-end: 2.8125rem;
+        }
+      }
+    }
+  }
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,11 +55,17 @@
   .avatar {
     width: 22px;
     height: 22px;
-    border-radius: 50%
+    border-radius: 50%;
+
+
+    @media screen  and (min-width: 1000px){
+      width: 50px;
+      height: 50px;
+      
+    }
   }
 
-
-  .avatar:hover{
+  .avatar:hover {
     outline: 2px solid colours.$primary-orange;
   }
 
@@ -35,10 +81,26 @@
     justify-content: center;
     column-gap: 0.5rem;
 
+   @media screen and (min-width: 1000px) {
+    gap: 3.125rem;
+    
+   }
+
+    .toggle-menu {
+      @media screen and (min-width: 1000px) {
+        display: none;
+      }
+    }
+
     h1 {
       //margin-bottom: 0;
       padding-bottom: 6px;
       font-weight: 700;
+
+      @media screen and (min-width: 1000px) {
+        padding-bottom: 0;
+        
+      }
     }
   }
 }
@@ -51,6 +113,10 @@
   left: 0;
   width: 100%;
   height: 100%;
+
+  @media screen and (min-width: 1000px) {
+    display: none;
+  }
 }
 
 .activated-menu {
@@ -65,9 +131,13 @@
 
   animation-name: slidein;
   animation-duration: 0.9s;
- // animation-timing-function: linear;
+  // animation-timing-function: linear;
   //animation-timing-function: ease-in;
   display: block;
+
+  @media screen and (min-width: 768px) {
+    width: 21.875rem;
+  }
 
   img {
     padding-top: 1rem;
