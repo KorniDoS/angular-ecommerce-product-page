@@ -1,7 +1,9 @@
+
+<div class="container product-container">
 <ng-container *ngIf="product">
   <ng-container *ngFor="let prod of product">
     <app-carousel [productImages]="prod.images"></app-carousel>
-    <div class="container">
+    <div class="product-wrapper">
       <div class="product-details">
         <h4 class="producer">{{ prod.producer }}</h4>
         <h2>{{ prod.name }}</h2>
@@ -13,3 +15,4 @@
     </div>
   </ng-container>
 </ng-container>
+</div>

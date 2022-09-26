@@ -8,6 +8,13 @@
     margin-block-start: 0;
     padding-block-start: 0;
     padding-inline-end: 1rem;
+
+
+    @media screen and (max-width: 576px) {
+        //padding: 0;
+        //margin: 0;
+        
+    }
 }
 
 .producer{
@@ -17,3 +24,42 @@
     font-weight: 700;
     text-transform: uppercase;
 }
+
+.product-wrapper{
+
+
+    max-width: 27rem;
+
+    @media screen and (min-width: 1000px) {
+        max-width: 20.625rem
+        
+    }
+
+    @media screen and (min-width: 1200px){
+        max-width: 27rem;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+   .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+}
+
+
+@media screen and (min-width: 1200px) {
+    .container{
+     display: flex;
+     justify-content: center;
+     gap: 8.125rem;
+ } 
+ 
+ }
+
+
+ 
+ 
