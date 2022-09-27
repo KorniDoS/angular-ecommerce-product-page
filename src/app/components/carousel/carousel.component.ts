@@ -6,6 +6,7 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-carousel',
@@ -13,13 +14,21 @@ import {
   styleUrls: ['./carousel.component.scss'],
 })
 export class CarouselComponent implements OnInit {
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private storageService: StorageService) {}
 
   @ViewChild('main_img', { static: false }) main_img!: ElementRef;
   @Input() productImages: string[] = [];
 
   currentIndex: number = 0;
-  bigger: boolean = false;
+  zoomed: boolean = false;
+
+  currentThumbnail?: any;
+
+  thumbnails: any[] = [];
+
+  noOfHighlightedThumbnails: number = 0;
+
+
   ngOnInit(): void {}
 
   onBackwards() {
@@ -46,11 +55,7 @@ export class CarouselComponent implements OnInit {
 
     if (this.currentIndex > this.productImages.length - 1) {
       this.currentIndex = 0;
-      this.renderer.setAttribute(
-        this.main_img.nativeElement,
-        'src',
-        this.productImages[this.currentIndex].toString()
-      );
+      
     } else {
       this.renderer.setAttribute(
         this.main_img.nativeElement,
@@ -61,8 +66,18 @@ export class CarouselComponent implements OnInit {
   }
 
 
-  onBigger(event: Event){
-    this.bigger = !this.bigger;
+  onZoomOut(){
+    this.zoomed = !this.zoomed;
+    this.storageService.zoomedIn.next(this.zoomed);
  
+  }
+
+  onChangeSrc(id: number){
+    this.renderer.setAttribute(
+        this.main_img.nativeElement,
+        'src',
+        this.productImages[id].toString()
+      );
+      this.currentIndex = id;
   }
 }

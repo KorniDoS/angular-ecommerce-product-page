@@ -1,15 +1,30 @@
 <div class="main">
-<img class="product" [src]="productImages[0]" alt="sneakers" #main_img (click)="onBigger($event)"/>
-<!--
-<div class="overlay" *ngIf="bigger">
-<img class="product" [src]="productImages[currentIndex]" alt="x">
-</div>
+  <div class="carousel-wrapper">
+    <img
+      class="product"
+      [src]="productImages[0]"
+      alt="sneakers"
+      #main_img
+      (click)="onZoomOut()"
+    />
 
--->
+    <div class="carousel-thumbnails">
+      <div
+      class="thumbnail-wrapper"
+        [ngClass]="{ outlined: currentIndex === i }"
+        *ngFor="let thumbnail of productImages; let i = index"
+      >
+        <img
+          [src]="thumbnail"
+          alt="carousel-thumbnail"
+          (click)="onChangeSrc(i)"
+        />
+      </div>
+    </div>
+  </div>
 
 
-<button class="btn btn-backward" (click)="onBackwards()">
-</button>
-<button class="btn btn-forward" (click)="onForwards()">
-</button>
+  
+  <button class="btn btn-backward" (click)="onBackwards()"></button>
+  <button class="btn btn-forward" (click)="onForwards()"></button>
 </div>
