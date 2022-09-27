@@ -6,8 +6,8 @@
     <div class="product-wrapper">
       <div class="product-details">
         <h4 class="producer">{{ prod.producer }}</h4>
-        <h2>{{ prod.name }}</h2>
-        <p>{{ prod.description }}</p>
+        <h2 class="product-name">{{ prod.name }}</h2>
+        <p class="product-description">{{ prod.description }}</p>
       </div>
       <div>
         <app-price [product]="prod"></app-price>

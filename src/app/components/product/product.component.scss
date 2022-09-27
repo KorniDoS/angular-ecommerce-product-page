@@ -38,6 +38,17 @@
     @media screen and (min-width: 1200px){
         max-width: 27rem;
     }
+
+   
+        .product-details{
+          h2{
+            font-size: 2.5rem;
+          }
+
+          .product-description{
+            margin-block: 1.5rem;
+          }
+        }
 }
 
 
