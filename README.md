@@ -1,27 +1,67 @@
-# AngularEcommerceProductPage
+# Frontend Mentor - E-commerce product page solution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
+This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Overview
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### The challenge
 
-## Running unit tests
+Users should be able to:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Open a lightbox gallery by clicking on the large product image
+- Switch the large product image by clicking on the small thumbnail images
+- Add items to the cart
+- View the cart and remove items from it
 
-## Running end-to-end tests
+### Screenshot
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![](./src/assets/images/screenshot.png)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Links
+
+- Solution URL: [https://www.frontendmentor.io/solutions/ecommerce-product-page-using-angular-sass-rxjs-gVef0FmMl8](https://www.frontendmentor.io/solutions/ecommerce-product-page-using-angular-sass-rxjs-gVef0FmMl8)
+- Live Site URL: [https://ecommerce-product-kornidos.netlify.app](https://ecommerce-product-kornidos.netlify.app)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- SCSS
+- Flexbox
+- Mobile-first workflow
+- [Angular](https://angular.io/) - JS framework
+
+
+### What I learned
+
+- Using RxJs high-order mapping operators
+- Communicating throughout the app using RxJs subjects and subscriptions
+
+
+### Continued development
+
+- Focus more on RxJs operators
+
+## Author
+
+- Frontend Mentor - [@KorniDoS](https://www.frontendmentor.io/profile/KorniDoS)
+
+
