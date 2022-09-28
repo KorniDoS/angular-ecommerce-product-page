@@ -2,10 +2,12 @@ import {
   Component,
   ElementRef,
   Input,
+  OnDestroy,
   OnInit,
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
@@ -13,7 +15,7 @@ import { StorageService } from 'src/app/services/storage.service';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent implements OnInit, OnDestroy {
   constructor(private renderer: Renderer2, private storageService: StorageService) {}
 
   @ViewChild('main_img', { static: false }) main_img!: ElementRef;
@@ -22,6 +24,9 @@ export class CarouselComponent implements OnInit {
   currentIndex: number = 0;
   zoomed: boolean = false;
 
+  zoomedInSub!: Subscription;
+  currentIndexSub!: Subscription;
+
   currentThumbnail?: any;
 
   thumbnails: any[] = [];
@@ -29,10 +34,27 @@ export class CarouselComponent implements OnInit {
   noOfHighlightedThumbnails: number = 0;
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.zoomedInSub = this.storageService.zoomedIn.subscribe(
+      res=>{
+           this.zoomed = res;
+      }
+   
+    )
+
+
+    this.currentIndexSub = this.storageService.currentIndex.subscribe(
+      res=>{
+        this.currentIndex = res;
+      }
+    )
+  }
 
   onBackwards() {
     this.currentIndex--;
+
+    this.storageService.currentIndex.next(this.currentIndex);
 
     if (this.currentIndex === -1) {
       this.renderer.setAttribute(
@@ -40,7 +62,10 @@ export class CarouselComponent implements OnInit {
         'src',
         this.productImages[this.productImages.length - 1].toString()
       );
+
+      
       this.currentIndex = this.productImages.length - 1;
+      this.storageService.currentIndex.next(this.currentIndex);
     } else {
       this.renderer.setAttribute(
         this.main_img.nativeElement,
@@ -52,10 +77,10 @@ export class CarouselComponent implements OnInit {
 
   onForwards() {
     this.currentIndex++;
-
+    this.storageService.currentIndex.next(this.currentIndex);
     if (this.currentIndex > this.productImages.length - 1) {
       this.currentIndex = 0;
-      
+      this.storageService.currentIndex.next(this.currentIndex);
     } else {
       this.renderer.setAttribute(
         this.main_img.nativeElement,
@@ -79,5 +104,12 @@ export class CarouselComponent implements OnInit {
         this.productImages[id].toString()
       );
       this.currentIndex = id;
+      this.storageService.currentIndex.next(this.currentIndex);
+  }
+
+
+  ngOnDestroy(): void {
+    this.zoomedInSub.unsubscribe();
+    this.currentIndexSub.unsubscribe();
   }
 }
