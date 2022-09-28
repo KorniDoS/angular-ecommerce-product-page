@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 @use "./colours";
+$container-sm: 540px;
+$container-md: 740px;
+$container-lg: 960px;
+$container-xlg: 1140px;
+$container-xxlg: 1300px;
 
 * {
   box-sizing: border-box;
@@ -12,9 +17,8 @@
 html {
   font-size: 16px;
 
-  @media screen and (min-width: 1000px){
+  @media screen and (min-width: 1000px) {
     height: 100%;
-    
   }
 }
 
@@ -26,20 +30,6 @@ body {
   min-height: 100vh;
   background-color: colours.$background;
   overflow-x: hidden;
-}
-
-$container-sm: 540px;
-$container-md: 740px;
-$container-lg: 960px;
-$container-xlg: 1140px;
-$container-xxlg: 1300px;
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
 }
 
 .container {
@@ -68,4 +58,13 @@ $container-xxlg: 1300px;
   //@media screen and (min-width: 1400px) {
   ////  width: $container-xxlg !important;
   //}
+}
+
+.attribution {
+  font-size: 14.4px;
+  text-align: center;
+  margin-block-start: 2rem;
+}
+.attribution a, .attribution a:link, .attribution:visited {
+  color: colours.$primary-orange;
 }

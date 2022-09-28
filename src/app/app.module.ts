@@ -10,6 +10,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PriceComponent } from './components/price/price.component';
+import { LightboxComponent } from './components/lightbox/lightbox.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { PriceComponent } from './components/price/price.component';
     HeaderComponent,
     MenuComponent,
     ShoppingCartComponent,
-    PriceComponent
+    PriceComponent,
+    LightboxComponent
   ],
   imports: [
     BrowserModule,
