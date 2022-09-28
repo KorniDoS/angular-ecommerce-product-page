@@ -1,3 +1,6 @@
+<div class="cart-wrapper">
+
+
 <div class="cart">
   <img [src]="'../assets/images/icon-cart.svg'" alt="cart" />
   <span *ngIf="cart.length > 0" class="cart-items-no">{{ cart.length }}</span>
@@ -33,6 +36,7 @@
   </div>
 
   <ng-template #empty>
-    <p class="cart-item-info">Your cart is empty.</p>
+    <p class="cart-item-info empty">Your cart is empty.</p>
   </ng-template>
+</div>
 </div>
