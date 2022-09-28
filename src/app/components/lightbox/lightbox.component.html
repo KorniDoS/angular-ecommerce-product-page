@@ -1,0 +1,37 @@
+<div class="zoomed">
+  <div class="carousel-wrapper">
+    <div class="lightbox-wrapper">
+      <div class="image-wrapper">
+        <img
+          class="product"
+          [src]="productImages[currentIndex]"
+          alt="sneakers"
+          #main_img
+        />
+
+        <button class="btn btn-backward" (click)="onBackwards()"></button>
+        <button class="btn btn-forward" (click)="onForwards()"></button>
+        <img
+        class="close"
+          [src]="'../assets/images/icon-close.svg'"
+          alt="close"
+          (click)="closeLightbox()"
+        />
+      </div>
+
+      <div class="carousel-thumbnails">
+        <div
+          class="thumbnail-wrapper"
+          [ngClass]="{ outlined: currentIndex === i }"
+          *ngFor="let thumbnail of productImages; let i = index"
+        >
+          <img
+            [src]="thumbnail"
+            alt="carousel-thumbnail"
+            (click)="onChangeSrc(i)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
