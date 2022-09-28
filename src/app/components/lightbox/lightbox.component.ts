@@ -17,12 +17,13 @@ export class LightboxComponent implements OnInit, OnDestroy {
   zoomed:boolean = false;
   productImages: Product[] = []
   imagesSub!: Subscription;
+  currentIndexSub!: Subscription;
 
   currentIndex: number = 0;
   ngOnInit(): void {
 
 
-    this.storageService.currentIndex.subscribe(res=>{
+    this.currentIndexSub = this.storageService.currentIndex.subscribe(res=>{
       this.currentIndex = res;
     })
  
@@ -104,6 +105,7 @@ export class LightboxComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
    // this.zoomSub.unsubscribe();
     this.imagesSub.unsubscribe();
+    this.currentIndexSub.unsubscribe();
   }
 
 }
