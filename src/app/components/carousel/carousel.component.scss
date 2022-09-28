@@ -5,14 +5,17 @@
   width: 100%;
 
   .product {
+    pointer-events: none;
     object-fit: cover;
     height: 300px;
     width: 100%;
+    cursor: pointer;
 
     @media screen and (min-width: 576px) {
       height: 27.625rem;
     }
     @media screen and (min-width: 1000px) {
+      pointer-events: unset;
       border-radius: 10px;
       height: 27.625rem;
       width: 27.625rem;
@@ -31,8 +34,7 @@
 
   .btn-backward:hover,
   .btn-forward:hover {
-    //Add orange on hover
-    //filter: brightness(0) saturate(100%) invert(57%) sepia(94%) saturate(2313%) hue-rotate(346deg) brightness(102%) contrast(105%);
+    background-color: colours.$primary-pale-orange;
   }
 
   .btn-forward {
