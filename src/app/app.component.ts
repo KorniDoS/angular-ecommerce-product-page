@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { StorageService } from './services/storage.service';
 import { Product } from './models/product.model';
@@ -7,9 +7,12 @@ import { Product } from './models/product.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
   storageSub!: Subscription;
+
+  zoomedInSub!: Subscription;
+  zoomed: boolean = false;
   ngOnInit(){
     this.storageSub = this.storageService.fetchProducts().subscribe(
       (res: Product[])=>{
@@ -18,8 +21,20 @@ export class AppComponent implements OnInit {
       }
     )
 
+    this.zoomedInSub = this.storageService.zoomedIn.subscribe(
+      res=>{
+        this.zoomed = res;
+        console.log(res);
+      }
+    )
+
 
   
+  }
+
+  ngOnDestroy(): void {
+    this.storageSub.unsubscribe();
+    this.zoomedInSub.unsubscribe();
   }
 
   constructor(private storageService: StorageService){}
